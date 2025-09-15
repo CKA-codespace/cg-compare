@@ -1,0 +1,40 @@
+{
+  "name": "Kubernetes Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+          "version": "latest"
+      },
+      "ghcr.io/devcontainers-extra/features/kubectl-asdf:2": {
+          "version": "latest"
+      },
+      "ghcr.io/dhoeric/features/k9s:1":{
+          "version": "latest"
+      },
+      "ghcr.io/rio/features/k3d:1":{
+          "version": "latest"
+      }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "GitHub Dark",
+        "editor.fontSize": 12,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.fontSize": 12
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml",
+        "GitHub.github-vscode-theme"
+      ]
+    }
+  },
+  "postCreateCommand": "cat .devcontainer/.bashrc_append >> /home/vscode/.bashrc || true",
+  "postStartCommand": "kubectl version --client && k9s version && k3d version"
+}
