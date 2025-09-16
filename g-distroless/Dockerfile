@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Stage 2: production (minimal distroless)
-FROM gcr.io/distroless/python3-debian12:debug
+FROM gcr.io/distroless/python3-debian12
 
 # copy git
 COPY --from=builder /usr/bin/git /usr/bin/git
