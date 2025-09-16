@@ -2,26 +2,27 @@
 
 ```
 $ docker images
-REPOSITORY   TAG       IMAGE ID       CREATED             SIZE
-gdl-sem      latest    abbad8a5dd7f   4 minutes ago       472MB
-rf-sem       latest    ec0a545556f0   About an hour ago   2.07GB
-vf-sem       latest    f563bfe4b139   2 hours ago         315MB
-cg-sem       latest    a331dfa3caec   2 hours ago         349MB
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+gdl-sem      latest    b7175db001b7   35 seconds ago   470MB
+rf-sem       latest    ec0a545556f0   2 hours ago      2.07GB
+vf-sem       latest    f563bfe4b139   2 hours ago      315MB
+cg-sem       latest    a331dfa3caec   2 hours ago      349MB
 ```
 
 google distroless images scan by Trivy
 ```
 $ trivy image gdl-sem
-2025-09-16T09:31:10Z    INFO    [vuln] Vulnerability scanning is enabled
-2025-09-16T09:31:10Z    INFO    [secret] Secret scanning is enabled
-2025-09-16T09:31:10Z    INFO    [secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2025-09-16T09:31:10Z    INFO    [secret] Please see https://trivy.dev/v0.66/docs/scanner/secret#recommendation for faster secret detection
-2025-09-16T09:31:10Z    INFO    Detected OS     family="debian" version="12.12"
-2025-09-16T09:31:10Z    INFO    [debian] Detecting vulnerabilities...   os_version="12" pkg_num=34
-2025-09-16T09:31:10Z    INFO    Number of language-specific files       num=1
-2025-09-16T09:31:10Z    INFO    [python-pkg] Detecting vulnerabilities...
-2025-09-16T09:31:10Z    WARN    Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/v0.66/docs/scanner/vulnerability#severity-selection for details.
-2025-09-16T09:31:10Z    INFO    Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
+2025-09-16T09:35:14Z    INFO    [vuln] Vulnerability scanning is enabled
+2025-09-16T09:35:14Z    INFO    [secret] Secret scanning is enabled
+2025-09-16T09:35:14Z    INFO    [secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2025-09-16T09:35:14Z    INFO    [secret] Please see https://trivy.dev/v0.66/docs/scanner/secret#recommendation for faster secret detection
+2025-09-16T09:35:21Z    INFO    [python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+2025-09-16T09:35:21Z    INFO    Detected OS     family="debian" version="12.12"
+2025-09-16T09:35:21Z    INFO    [debian] Detecting vulnerabilities...   os_version="12" pkg_num=34
+2025-09-16T09:35:21Z    INFO    Number of language-specific files       num=1
+2025-09-16T09:35:21Z    INFO    [python-pkg] Detecting vulnerabilities...
+2025-09-16T09:35:21Z    WARN    Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/v0.66/docs/scanner/vulnerability#severity-selection for details.
+2025-09-16T09:35:21Z    INFO    Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
 
 Report Summary
 
@@ -336,4 +337,5 @@ Total: 4 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 3, CRITICAL: 0)
 │                       │                │          │        │                   │               │ PackageIndex                                             │
 │                       │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2025-47273               │
 └───────────────────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴──────────────────────────────────────────────────────────┘
+
 ```
