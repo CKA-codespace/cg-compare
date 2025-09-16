@@ -17,6 +17,9 @@
       },
       "ghcr.io/rio/features/k3d:1":{
           "version": "latest"
+      },
+      "ghcr.io/dhoeric/features/trivy:1":{
+        "version": "latest"
       }
   },
   "customizations": {
